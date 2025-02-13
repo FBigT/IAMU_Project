@@ -1,5 +1,8 @@
 package good.stuff.myapplication.render
 
+import android.view.Surface
+
+// dont work dont use
 class VulkanRenderer {
     companion object {
         init {

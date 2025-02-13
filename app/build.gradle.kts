@@ -16,6 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
+        /* loads cpp and the other two things
         @Suppress("UnstableApiUsage")
         externalNativeBuild {
             cmake {
@@ -26,6 +27,7 @@ android {
         ndk {
             abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
         }
+         */
     }
 
     buildTypes {
@@ -47,12 +49,14 @@ android {
     buildFeatures{
         viewBinding = true
     }
+    /* external link to c make list, it links a bunch of stuff to the compiler
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
             version = "3.22.1"
         }
     }
+     */
 }
 
 dependencies {
@@ -73,8 +77,8 @@ dependencies {
     // RecyclerView
     implementation(libs.androidx.recyclerview)
 
-    // Vulkan
-    implementation(libs.lwjgl.vulkan)
+    // Vulkan (couldn't figure it out)
+    //implementation(libs.lwjgl.vulkan)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

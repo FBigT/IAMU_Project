@@ -1,15 +1,33 @@
 #define VK_USE_PLATFORM_ANDROID_KHR
+#include <jni.h>
 #include <vulkan/vulkan.h>
 #include <android/native_window.h>
 #include <android/native_window_jni.h>
 #include <vector>
 #include <stdexcept>
+#include <fstream>
 
 // Vulkan instance
 VkInstance instance;
 
 // Vulkan surface
 VkSurfaceKHR surface;
+
+// Function to read SPIR-V shader files
+std::vector<char> readShaderFile(const std::string& filename) {
+    std::ifstream file(filename, std::ios::ate | std::ios::binary);
+    if (!file.is_open()) {
+        throw std::runtime_error("Failed to open shader file!");
+    }
+
+    size_t fileSize = (size_t) file.tellg();
+    std::vector<char> buffer(fileSize);
+    file.seekg(0);
+    file.read(buffer.data(), fileSize);
+    file.close();
+
+    return buffer;
+}
 
 // Function to create a Vulkan instance
 void createInstance() {
@@ -38,17 +56,8 @@ void createInstance() {
     }
 }
 
-// Function to create a Vulkan surface
+// Function to create Vulkan surface
 void createSurface(ANativeWindow* window) {
-    typedef VkResult (VKAPI_PTR *PFN_vkCreateAndroidSurfaceKHR)(VkInstance, const VkAndroidSurfaceCreateInfoKHR*, const VkAllocationCallbacks*, VkSurfaceKHR*);
-    auto vkCreateAndroidSurfaceKHR = reinterpret_cast<PFN_vkCreateAndroidSurfaceKHR>(
-            vkGetInstanceProcAddr(instance, "vkCreateAndroidSurfaceKHR")
-    );
-
-    if (!vkCreateAndroidSurfaceKHR) {
-        throw std::runtime_error("Failed to load vkCreateAndroidSurfaceKHR!");
-    }
-
     VkAndroidSurfaceCreateInfoKHR createInfo{};
     createInfo.sType = VK_STRUCTURE_TYPE_ANDROID_SURFACE_CREATE_INFO_KHR;
     createInfo.window = window;
@@ -58,10 +67,18 @@ void createSurface(ANativeWindow* window) {
     }
 }
 
+// Load shaders and create a pipeline
+void createGraphicsPipeline() {
+    auto vertShaderCode = readShaderFile("shaders/shader.vert.spv");
+    auto fragShaderCode = readShaderFile("shaders/shader.frag.spv");
+
+    // Shader module creation logic...
+}
+
 // Function to initialize Vulkan
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_example_vulkanapp_VulkanRenderer_initVulkan(JNIEnv* env, jobject thiz, jobject javaSurface) {
+Java_good_stuff_myapplication_render_VulkanRenderer_initVulkan(JNIEnv* env, jobject thiz, jobject javaSurface) {
     (void)env; // Suppress unused parameter warning
     (void)thiz; // Suppress unused parameter warning
 
