@@ -76,6 +76,8 @@ dependencies {
 
     // RecyclerView
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     // Vulkan (couldn't figure it out)
     //implementation(libs.lwjgl.vulkan)
