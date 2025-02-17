@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KotlinProject</string>
+    <string name="app_name">Uranium</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -43,5 +43,16 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="lorem_short">Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dashboard">Store Front</string>
+    <string name="explore">Explore</string>
+    <string name="favorites">Favorites</string>
+    <string name="uranium">URANIUM</string>
+    <string name="genres">Genres:</string>
+    <string name="score">Score:</string>
+    <string name="add_to_favorites">Add to favorites</string>
 </resources>

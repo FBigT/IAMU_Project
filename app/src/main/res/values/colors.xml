@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="uranium_green">#76B900</color>
+    <color name="glowing_lime">#A7E300</color>
+    <color name="reactor_dark">#1E1E1E</color>
+    <color name="graphite_gray">#3A3A3A</color>
+    <color name="aluminum">#494949</color>
+    <color name="plutonium_silver">#A0A0A0</color>
+    <color name="radiation_glow">#00FF66</color>
+    <color name="cherenkov_radiation">#00BFFF</color>
+    <color name="deep_sea_green">#00433F</color>
 </resources>

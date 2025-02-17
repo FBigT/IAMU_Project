@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/pager_background">
+
+    <!-- Game Cover Image -->
+    <ImageView
+        android:id="@+id/ivGameCover"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:background="@color/graphite_gray"
+        tools:srcCompat="@drawable/debug_image" />
+
+    <!-- Title & Release Date -->
+    <TextView
+        android:id="@+id/tvGameTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Cyberpunk 2077" />
+
+    <TextView
+        android:id="@+id/tvReleaseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/plutonium_silver"
+        android:textSize="14sp"
+        tools:text="Release Date: Dec 10, 2020"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Developer & Publisher -->
+    <TextView
+        android:id="@+id/tvDeveloper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/plutonium_silver"
+        android:textSize="14sp"
+        tools:text="Developer: CD Projekt Red" />
+
+    <TextView
+        android:id="@+id/tvPublisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/plutonium_silver"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"
+        tools:text="Publisher: CD Projekt Red" />
+
+    <!-- Game Description -->
+    <TextView
+        android:id="@+id/tvGameDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"
+        android:lineSpacingExtra="4sp"
+        android:maxLines="5"
+        android:ellipsize="end"
+        android:background="@drawable/holder_rectangle"
+        android:padding="10dp"
+        tools:text="@string/lorem_short"/>
+
+    <!-- Genres Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/genres"
+            android:textSize="14sp"
+            android:textColor="@color/plutonium_silver" />
+
+        <TextView
+            android:id="@+id/tvGenres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            tools:text="RPG, Open World, Action" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+
+        <!-- Scores Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <!-- User Score Card -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@color/uranium_green"
+                android:gravity="center"
+                android:layout_marginEnd="30dp"
+                android:radius="10dp">
+
+                <TextView
+                    android:id="@+id/tvUserScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="User Score: 86.5" />
+            </LinearLayout>
+
+            <!-- Critic Score Card -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@color/radiation_glow"
+                android:gravity="center"
+                android:radius="10dp">
+
+                <TextView
+                    android:id="@+id/tvCriticScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="Critic Score: 78" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Followers & Reviews Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Followers Count -->
+            <TextView
+                android:id="@+id/tvFollows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="@color/cherenkov_radiation"
+                android:textStyle="bold"
+                tools:text="Followers: 15K" />
+
+            <!-- Review Count -->
+            <TextView
+                android:id="@+id/tvReviewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="@color/plutonium_silver"
+                android:textStyle="bold"
+                android:gravity="center"
+                tools:text="Reviews: 1200" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- Add to Favorites Button -->
+    <ImageButton
+        android:id="@+id/btnAddToFavorites"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/uranium_green"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/ic_favorite"
+        android:contentDescription="@string/add_to_favorites"
+        android:scaleType="fitXY"
+        android:padding="8dp"/>
+</LinearLayout>

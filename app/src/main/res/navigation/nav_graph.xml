@@ -6,17 +6,17 @@
 
     <fragment
         android:id="@+id/nav_dashboard"
-        android:name="good.stuff.myapplication.DashboardFragment"
+        android:name="good.stuff.myapplication.fragment.DashboardFragment"
         android:label="Dashboard" />
 
     <fragment
         android:id="@+id/nav_explore"
-        android:name="good.stuff.myapplication.ExploreFragment"
+        android:name="good.stuff.myapplication.fragment.ExploreFragment"
         android:label="Explore" />
 
     <fragment
         android:id="@+id/nav_favorites"
-        android:name="good.stuff.myapplication.FavoritesFragment"
+        android:name="good.stuff.myapplication.fragment.FavoritesFragment"
         android:label="Favorites" />
 
 </navigation>

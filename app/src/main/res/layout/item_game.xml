@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/reactor_dark"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Game Cover -->
+        <ImageView
+            android:id="@+id/ivGameCover"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/debug_image" />
+
+        <!-- Game Info Container -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <!-- Title & Rating Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/tvGameTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="Game Title" />
+            </LinearLayout>
+
+            <!-- Platforms -->
+            <LinearLayout
+                android:id="@+id/platformIconsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="2dp" >
+                <!-- Debug Icons -->
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    tools:src="@drawable/ic_play_station" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    tools:src="@drawable/ic_windows" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    tools:src="@drawable/ic_xbox" />
+            </LinearLayout>
+
+            <!-- Genres -->
+            <TextView
+                android:id="@+id/tvGenres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                tools:text="Genre1 Genre2 Genre3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="2dp"
+            android:gravity="right">
+
+            <!-- Release Date -->
+            <TextView
+                android:id="@+id/tvReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                tools:text="13 Feb, 2025" />
+
+            <!-- Rating Badge -->
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rating_badge"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_gravity="bottom|end"
+                tools:text="87" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
